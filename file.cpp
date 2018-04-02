@@ -36,11 +36,13 @@ void _save_date_to_file(std::string _directory, int** _2d_array_data, int _row_c
 	// SAVE data to file
 	if (myfile.is_open())
 	{
+		int _int_bit;
 		myfile << _row_count << ", " << _col_count << std::endl;
 		for (int i = 0; i < _row_count; i++){
 			for (int j = 0; j < _row_count; j++){
 				std::bitset<8> x(_2d_array_data[i][j]);
 				myfile << x << std::endl;
+				myfile << (int)(x.to_ulong()) << std::endl;
 				//myfile << _2d_array_data[i][j] << std::endl;
 			}
 		}
@@ -50,3 +52,22 @@ void _save_date_to_file(std::string _directory, int** _2d_array_data, int _row_c
 	else std::cout << "Unable to open file";
 
 }
+
+void _get_sum_from_file(std::string _directory){
+	std::ifstream myfile(_directory + ".txt");
+	std::string line;
+
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line))
+		{
+			std::cout << line << '\n';
+		}
+		myfile.close();
+	}
+
+	else std::cout << "Unable to open file";
+
+
+}
+

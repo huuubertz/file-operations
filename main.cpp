@@ -19,6 +19,7 @@ int main() {
 	// zadanie 8.2.2
 	//_get_data_from_file_to_read(_get_descriptor_from_file_to_read("autko"));
 	// zadanie 8.2.19
+	/*
 	int** _2d_array_data;
 	int _row_count = 4;
 	int _col_count = 4;
@@ -33,6 +34,32 @@ int main() {
 	}
 
 	_save_date_to_file("binaryfile", _2d_array_data, 3, 3);
+	*/
+	// zadanie 8.2.7
+	// TO DO przeniesc do pliku .h i .cpp
+	_get_sum_from_file("liczby");
+
+	int suma = 0;
+	string y = "1 2 3 4 5";
+	cout << y << endl;
+	cout << y[1] << endl;
+	for (int k = 0; k < y.length()-1; k++){
+		if (y[k] == ' '){
+			continue;
+		}
+		else{
+			suma += stoi(&y[k]);
+			cout << suma << endl;
+			//cout << x << endl;
+			//std::bitset<32> z(x);
+			//cout << z << endl;
+			//cout << (int)(z.to_ulong()) << endl;
+			//suma += (int)(z.to_ulong());
+			//cout << suma << endl;
+		}
+	}
+
+	cout << suma << endl;
 
 	system("pause");
 	return 0;
