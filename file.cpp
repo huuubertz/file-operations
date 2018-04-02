@@ -22,3 +22,31 @@ void _get_data_from_file_to_read(std::ifstream* _file){
 
 	else std::cout << "Unable to open file";
 }
+
+void _save_date_to_file(std::string _directory, int** _2d_array_data, int _row_count, int _col_count){
+	// OPEN file from directory
+	std::ofstream myfile(_directory + ".txt");
+
+	// INITIALIZE 2D array
+	//_2d_array_data = new int*[_row_count];
+	//for (int i = 0; i < _row_count; i++){
+	//	_2d_array_data[i] = new int[_col_count];
+	//}
+
+	// SAVE data to file
+	if (myfile.is_open())
+	{
+		myfile << _row_count << ", " << _col_count << std::endl;
+		for (int i = 0; i < _row_count; i++){
+			for (int j = 0; j < _row_count; j++){
+				std::bitset<8> x(_2d_array_data[i][j]);
+				myfile << x << std::endl;
+				//myfile << _2d_array_data[i][j] << std::endl;
+			}
+		}
+
+		myfile.close();
+	}
+	else std::cout << "Unable to open file";
+
+}
