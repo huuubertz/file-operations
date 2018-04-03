@@ -37,29 +37,7 @@ int main() {
 	*/
 	// zadanie 8.2.7
 	// TO DO przeniesc do pliku .h i .cpp
-	_get_sum_from_file("liczby");
-
-	int suma = 0;
-	string y = "1 2 3 4 5";
-	cout << y << endl;
-	cout << y[1] << endl;
-	for (int k = 0; k < y.length()-1; k++){
-		if (y[k] == ' '){
-			continue;
-		}
-		else{
-			suma += stoi(&y[k]);
-			cout << suma << endl;
-			//cout << x << endl;
-			//std::bitset<32> z(x);
-			//cout << z << endl;
-			//cout << (int)(z.to_ulong()) << endl;
-			//suma += (int)(z.to_ulong());
-			//cout << suma << endl;
-		}
-	}
-
-	cout << suma << endl;
+	cout << _get_sum_from_file("liczby") << endl;
 
 	system("pause");
 	return 0;

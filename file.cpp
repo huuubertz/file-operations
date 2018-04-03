@@ -53,21 +53,27 @@ void _save_date_to_file(std::string _directory, int** _2d_array_data, int _row_c
 
 }
 
-void _get_sum_from_file(std::string _directory){
+int _get_sum_from_file(std::string _directory){
 	std::ifstream myfile(_directory + ".txt");
 	std::string line;
 
-	if (myfile.is_open())
-	{
-		while (getline(myfile, line))
-		{
-			std::cout << line << '\n';
+	if (myfile.is_open()){
+		int suma = 0;
+		while (getline(myfile, line)){
+			std::cout << line << std::endl;
+			for (int k = 0; k < line.length(); k++){
+				if (line[k] == ' '){
+					continue;
+				}
+				else{
+					suma += std::stoi(&line[k]);
+				}
+			}
 		}
 		myfile.close();
+		return suma;
 	}
 
 	else std::cout << "Unable to open file";
-
-
 }
 
