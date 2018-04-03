@@ -7,12 +7,6 @@
 
 using namespace std;
 
-
-int* value(){
-	int x = 6;
-	return &x;
-}
-
 int main() {
 	// zadanie 8.2.1
 	//cout << _get_descriptor_from_file_to_read("autko") << endl;
@@ -36,25 +30,7 @@ int main() {
 	_save_date_to_file("binaryfile", _2d_array_data, 3, 3);
 	*/
 	// zadanie 8.2.7
-	// TO DO przeniesc do pliku .h i .cpp
 	cout << _get_sum_from_file("liczby") << endl;
-	/*
-	int v[4];
-	v[0] = 3;
-	v[1] = 2;
-	v[2] = 5;
-	v[3] = 1;
-
-	for (int i = 0; i < 4; i++){
-		cout << v[i] << endl;
-	}
-
-	sort(begin(v), end(v));
-
-	for (int i = 0; i < 4; i++){
-		cout << v[i] << endl;
-	}
-	*/
 	// zadanie 8.2.8
 	cout << _get_the_lowest_number_from_file("liczby") << endl;
 

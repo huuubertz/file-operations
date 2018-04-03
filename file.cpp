@@ -83,8 +83,6 @@ int _get_the_lowest_number_from_file(std::string _directory){
 
 	if (myfile.is_open()){
 		std::vector<int> _data_from_file;
-		//int _length_of_array;
-		//int *_data_form_file;
 		while (getline(myfile, line)){
 			std::cout << line << std::endl;
 			for (int k = 0; k < line.length(); k++){
@@ -95,7 +93,6 @@ int _get_the_lowest_number_from_file(std::string _directory){
 					_data_from_file.push_back(std::stoi(&line[k]));
 				}
 			}
-			//_data_form_file = new int[_length_of_array];
 		}
 		std::sort(begin(_data_from_file), end(_data_from_file));
 
