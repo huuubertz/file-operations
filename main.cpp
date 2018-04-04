@@ -34,7 +34,8 @@ int main() {
 	// zadanie 8.2.8
 	//cout << _get_the_lowest_number_from_file("liczby") << endl;
 	// zadanie 8.2.20
-	_save_date_from_file_to_2D_array("binaryfile.txt");
+	cout << _save_date_from_file_to_2D_array("binaryfile.txt") << endl;
+
 
 	system("pause");
 	return 0;
