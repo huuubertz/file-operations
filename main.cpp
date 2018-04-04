@@ -30,9 +30,11 @@ int main() {
 	_save_date_to_file("binaryfile", _2d_array_data, 3, 3);
 	*/
 	// zadanie 8.2.7
-	cout << _get_sum_from_file("liczby") << endl;
+	//cout << _get_sum_from_file("liczby") << endl;
 	// zadanie 8.2.8
-	cout << _get_the_lowest_number_from_file("liczby") << endl;
+	//cout << _get_the_lowest_number_from_file("liczby") << endl;
+	// zadanie 8.2.20
+	_save_date_from_file_to_2D_array("binaryfile.txt");
 
 	system("pause");
 	return 0;

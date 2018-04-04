@@ -103,3 +103,52 @@ int _get_the_lowest_number_from_file(std::string _directory){
 	else std::cout << "Unable to open file";
 }
 
+void _save_date_from_file_to_2D_array(std::string _directory){
+	std::ifstream* myfile = new std::ifstream(_directory);
+	//myfile->open(_directory);
+	int _idx = 0;
+	std::vector <int> dimension;
+	std::cout << dimension.empty() << std::endl;
+	std::string line;
+
+
+	if (myfile->is_open()){
+		while (std::getline(*myfile, line)){
+			//std::cout << line << std::endl;
+			if (_idx == 0){
+				for (int k = 0; k < line.length(); k++){
+					if (line[k] == ','){
+						continue;
+					}
+					else{
+						dimension.push_back(std::stoi(&line[k]));
+					}
+					if (k == line.length() - 1){
+						if (!(dimension.empty())){
+							//std::cout << dimension.empty() << std::endl;
+							// INITIALIZE 2D array
+							int** _2d_array_data;
+							_2d_array_data = new int*[dimension.front()];
+							for (int i = 0; i < dimension.front(); i++){
+								_2d_array_data[i] = new int[dimension.back()];
+							}
+						}
+						else std::cout << "dimension array's are 0" << std::endl;
+					}
+				}
+			}
+			else{
+				dimension.clear();
+				std::bitset<8> x(line);
+				dimension.push_back((int)(x.to_ulong()));
+			}
+			_idx++;
+		}
+		//std::cout << dimension.front() << std::endl;
+		//std::cout << dimension.back() << std::endl;
+		myfile->close();
+	}
+	else std::cout << "Unable to open file" << std::endl;
+
+}
+
